@@ -53,7 +53,7 @@ Ensure you have the following installed on your system:
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/ad-manager.git
+git clone https://github.com/a36069/adsManager.git
 cd ad-manager
 ```
 
