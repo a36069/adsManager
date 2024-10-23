@@ -102,7 +102,7 @@ The application exposes APIs on port **8093**.
 Upload your impressions.json and clicks.json files:
 
 ```
-POST /api/v1/ads/load
+POST /api/metrics/loadData
 Content-Type: multipart/form-data
 
 Form Data:
@@ -110,17 +110,21 @@ Form Data:
 - clicksFile: [clicks.json file]
 ```
 
+get Status with trackingId
+```
+/api/metrics/loadData/state/{trackingId}
+```
 ### Metrics Endpoint
 
 Retrieve calculated metrics:
 
-`GET /api/v1/ads/metrics`
+`GET /api/metrics`
 
 ### Recommendations Endpoint
 
 Retrieve generated recommendations:
 
-`GET /api/v1/ads/recommendations`
+`GET /api/metrics/recommendations`
 
 ## API Documentation
 
