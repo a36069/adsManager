@@ -1,0 +1,22 @@
+success:
+  code: 200
+  message: Success
+failed:
+  code: -1
+  message: Failed
+notfound:
+  code: 404
+  message: Data Not Found
+input-validation:
+  code: 400
+  message: Inputs Args Not Valid
+forbidden:
+  code: 403
+  message: The access is permanently forbidden
+internal-server-error:
+  code: 500
+  message: Internal Server Error
+
+request_is_duplicated:
+  code: 1001
+  message: request is not valid

@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO}
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 50
+          batch_versioned_data: true
+        order_inserts: true
+        order_updates: true
+        generate_statistics: true
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  redis-new:
+    host: ${SPRING_REDIS_HOST}
+    port: ${SPRING_REDIS_PORT}
+
+cache:
+  expiration:
+    default: 3600
+
+
+###############################################################################
+# logging
+###############################################################################
+logging:
+  file:
+    name: /app/logs/adsManager/${spring.application.name}.log
+  logback:
+    rollingpolicy:
+      file-name-pattern: /app/logs/adsManager/${spring.application.name}.%d{yyyy-MM-dd}.%i.log

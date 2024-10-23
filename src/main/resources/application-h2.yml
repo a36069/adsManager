@@ -1,0 +1,56 @@
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings.trace: false
+      settings.web-allow-others: false
+  datasource:
+    url: jdbc:h2:mem:movie
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        globally_quoted_identifiers: true
+        order_inserts: true
+        order_updates: true
+        jdbc:
+          batch_size: 30
+          time_zone: UTC
+  data:
+    redis:
+      port: 6379
+      host: localhost
+
+cache:
+  expiration:
+    default: 3600
+
+###############################################################################
+# logging
+###############################################################################
+logging:
+  file:
+    name: /app/logs/core/${spring.application.name}.log
+  logback:
+    rollingpolicy:
+      file-name-pattern: /app/logs/core/${spring.application.name}.%d{yyyy-MM-dd}.%i.log
+
+
+###############################################################################
+# ThirdApi
+###############################################################################
+third_api:
+  omdb:
+    apikey: 228d6fd6
+    base_url: https://www.omdbapi.com
+
+httpClient:
+  timeout: 5000
+  payloadSize: 20000000
